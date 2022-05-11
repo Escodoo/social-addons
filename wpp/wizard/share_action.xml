@@ -4,6 +4,7 @@
         <field name="name">view.portal.share.form.inherit</field>
         <field name="model">portal.share</field>
         <field name="inherit_id" ref="portal.portal_share_wizard" />
+        <field name="priority">99</field>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='share_link']" position="before">
                 <field name="share_type" widget="radio" />
