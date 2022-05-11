@@ -1,10 +1,12 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
     <record id="wpp_stock_template" model="mail.template">
         <field name="name">Whats app Inventory template</field>
         <field name="subject">Inventory Template</field>
-        <field name="model_id" ref="stock.model_stock_picking"/>
-        <field name="body_html"><![CDATA[<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px;">
+        <field name="model_id" ref="stock.model_stock_picking" />
+        <field
+            name="body_html"
+        ><![CDATA[<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px;">
          <p style="margin: 0px; padding: 0px; font-size: 13px;">
          <div>
             Hello *${object.partner_id.name or ''}*,

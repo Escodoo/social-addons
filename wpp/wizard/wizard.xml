@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <data>
@@ -7,9 +7,9 @@
             <field name="model">display.error.message</field>
             <field name="arch" type="xml">
                 <form string="Message">
-                <field name="name"/>
+                <field name="name" />
                 <footer>
-                    <button string="OK" special="cancel" class="btn-primary"/>
+                    <button string="OK" special="cancel" class="btn-primary" />
                 </footer>
                 </form>
             </field>

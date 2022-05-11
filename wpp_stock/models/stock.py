@@ -1,7 +1,9 @@
-from odoo import models, fields, api, _
 import urllib.parse as parse
-from odoo.exceptions import UserError
 from itertools import groupby
+
+from odoo import _, models
+from odoo.exceptions import UserError
+
 
 class InventoryTransferDone(models.Model):
     _inherit = 'stock.picking'
@@ -10,7 +12,6 @@ class InventoryTransferDone(models.Model):
         record_phone = self.partner_id.mobile
         if not record_phone:
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
             context['message'] = "Please add a mobile number!"
             return {
@@ -26,9 +27,9 @@ class InventoryTransferDone(models.Model):
             }
         if not record_phone[0] == "+":
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
-            context['message'] = "No Country Code! Please add a valid mobile number along with country code!"
+            context['message'] = "No Country Code! Please add a valid mobile \
+                                 number along with country code!"
             return {
                 'name': 'Invalid Mobile Number',
                 'type': 'ir.actions.act_window',
@@ -55,7 +56,6 @@ class InventoryTransferDone(models.Model):
         record_phone = self.partner_id.mobile
         if not record_phone:
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
             context['message'] = "Please add a mobile number!"
             return {
@@ -71,9 +71,9 @@ class InventoryTransferDone(models.Model):
             }
         if not record_phone[0] == "+":
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
-            context['message'] = "No Country Code! Please add a valid mobile number along with country code!"
+            context['message'] = "No Country Code! Please add a valid mobile \
+                                 number along with country code!"
             return {
                 'name': 'Invalid Mobile Number',
                 'type': 'ir.actions.act_window',
@@ -89,10 +89,12 @@ class InventoryTransferDone(models.Model):
             prods = ""
             for rec in self:
                 for id in rec.move_line_ids_without_package:
-                            prods = prods + "*" +str(id.product_id.name) + " : " + str(id.qty_done) + "* \n"
+                    prods = prods + "*" + str(id.product_id.name) \
+                        + " : " + str(id.qty_done) + "* \n"
 
-            custom_msg = "Hello *{}*, your order *{}* is ready.\nOrder contains following items: \n{}".format(
-                str(self.partner_id.name), str(self.name), prods)
+            custom_msg = "Hello *{}*, your order *{}* is ready.\
+                         \nOrder contains following items: \n{}".format(
+                         str(self.partner_id.name), str(self.name), prods)
             ph_no = [number for number in record_phone if number.isnumeric()]
             ph_no = "".join(ph_no)
             ph_no = "+" + ph_no
@@ -113,7 +115,8 @@ class InventoryTransferDone(models.Model):
         return next(partners, True) and not next(partners, False)
 
     def multi_sms(self):
-        inventory_order_ids = self.env['stock.picking'].browse(self.env.context.get('active_ids'))
+        inventory_order_ids = self.env['stock.picking'].browse(
+            self.env.context.get('active_ids'))
 
         cust_ids = []
         inventory_nums = []
@@ -133,18 +136,20 @@ class InventoryTransferDone(models.Model):
             for each in inventory_order_ids:
                 prods = ""
                 for id in each.move_line_ids_without_package:
-                    prods = prods + "*" +  "Product: " + str(id.product_id.name) + "* \n"
+                    prods = prods + "*" + "Product: " + str(id.product_id.name) + "* \n"
                 product_all.append(prods)
 
-            custom_msg = "Hi" + " " + self.partner_id.name + ',' + '\n' + "Your Orders" + '\n' + inventory_numbers + \
-                         ' ' + '\n' + "are ready for review.\n"
+            custom_msg = "Hi" + " " + self.partner_id.name + ',' \
+                + '\n' + "Your Orders" + '\n' + inventory_numbers + \
+                ' ' + '\n' + "are ready for review.\n"
             counter = 0
             for every in product_all:
                 custom_msg = custom_msg + "Your order " + "*" + inventory_nums[
                     counter] + "*" + " contains following items: \n{}".format(every) + '\n'
                 counter += 1
 
-            final_msg = custom_msg + "\nDo not hesitate to contact us if you have any questions."
+            final_msg = custom_msg + "\nDo not hesitate to contact us \
+                                     if you have any questions."
 
             ctx = dict(self.env.context)
             ctx.update({

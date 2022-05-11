@@ -1,6 +1,9 @@
-from odoo import models, fields, api, _
-import html2text
 import urllib.parse as parse
+
+import html2text
+
+from odoo import fields, models
+
 
 class WizardMultipleContact(models.TransientModel):
     _name = 'wpp.wizard.multiple.contact'

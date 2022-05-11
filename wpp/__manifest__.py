@@ -9,7 +9,7 @@
     'license': 'AGPL-3',
     'author': 'Escodoo',
     'depends': ['base', 'contacts', 'website', 'sale'],
-    'data': [ 
+    'data': [
         'views/views.xml',
         'views/templates.xml',
         'views/whatsapp_icon_templates.xml',
@@ -22,4 +22,9 @@
         'wizard/share_action.xml',
         'security/wpp_security.xml',
     ],
+    'external_dependencies': {
+        'python': [
+            'html2text',
+        ]
+    }
 }

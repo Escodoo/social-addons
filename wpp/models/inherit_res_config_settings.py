@@ -1,13 +1,15 @@
-# -*- coding: utf-8 -*-
 from odoo import fields, models
 
 
 class InheritResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    show_wpp_icon = fields.Boolean(string="Show Whatsapp Icon", related='website_id.show_wpp_icon',
-                                        readonly=False)
-    wpp_number = fields.Char(string="WhatsApp Number", related='website_id.wpp_number', readonly=False)
+    show_wpp_icon = fields.Boolean(string="Show Whatsapp Icon",
+                                   related='website_id.show_wpp_icon',
+                                   readonly=False)
+    wpp_number = fields.Char(string="WhatsApp Number",
+                             related='website_id.wpp_number',
+                             readonly=False)
 
 
 class InheritWebsiteModule(models.Model):

@@ -1,19 +1,28 @@
-from odoo import models, fields, api, _
-import html2text
 import urllib.parse as parse
 
+import html2text
+
+from odoo import api, fields, models
+
+
 class MessageError(models.TransientModel):
-    _name='display.error.message'
+    _name = 'display.error.message'
+
     def get_message(self):
         if self.env.context.get("message", False):
             return self.env.context.get('message')
         return False
     name = fields.Text(string="Message", readonly=True, default=get_message)
 
+
 class SendMessage(models.TransientModel):
     _name = 'wpp.wizard'
 
-    user_id = fields.Many2one('res.partner', string="Recipient Name", default=lambda self: self.env[self._context.get('active_model')].browse(self.env.context.get('active_ids')).partner_id)
+    user_id = fields.Many2one('res.partner',
+                              string="Recipient Name",
+                              default=lambda self:
+                              self.env[self._context.get('active_model')].
+                              browse(self.env.context.get('active_ids')).partner_id)
     mobile = fields.Char(related='user_id.mobile', required=True)
     message = fields.Text(string="Message")
     model = fields.Char('mail.template.model_id')
@@ -31,11 +40,12 @@ class SendMessage(models.TransientModel):
         if template_id:
             values = self.generate_email_for_composer(template_id, [res_id])[res_id]
         else:
-            default_values = self.with_context(default_model=model, default_res_id=res_id).default_get(
+            default_values = self.with_context(default_model=model,
+                                               default_res_id=res_id).default_get(
                 ['model', 'res_id', 'partner_ids', 'message'])
-            values = dict((key, default_values[key]) for key in
-                          ['body', 'partner_ids']
-                          if key in default_values)
+            values = {key: default_values[key]
+                      for key in ['body', 'partner_ids']
+                      if key in default_values}
         values = self._convert_to_write(values)
         return {'value': values}
 
@@ -48,10 +58,12 @@ class SendMessage(models.TransientModel):
             fields = ['body_html']
         returned_fields = fields + ['partner_ids']
         values = dict.fromkeys(res_ids, False)
-        template_values = self.env['mail.template'].with_context(tpl_partners_only=True).browse(template_id).generate_email(res_ids, fields=fields)
+        template_values = self.env['mail.template'].with_context(
+            tpl_partners_only=True).browse(template_id).generate_email(res_ids, fields=fields)
         for res_id in res_ids:
-            res_id_values = dict((field, template_values[res_id][field]) for field in returned_fields if
-                                 template_values[res_id].get(field))
+            res_id_values = {field: template_values[res_id][field]
+                             for field in returned_fields
+                             if template_values[res_id].get(field)}
             res_id_values['message'] = html2text.html2text(res_id_values.pop('body_html', ''))
             values[res_id] = res_id_values
         return multi_mode and values or values[res_ids[0]]

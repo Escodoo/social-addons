@@ -1,7 +1,9 @@
-from odoo import models, fields, api, _
 import urllib.parse as parse
-from odoo.exceptions import UserError
 from itertools import groupby
+
+from odoo import _, models
+from odoo.exceptions import UserError
+
 
 class SaleOrderValidation(models.Model):
     _inherit = 'sale.order'
@@ -10,7 +12,6 @@ class SaleOrderValidation(models.Model):
         mobile = self.partner_id.mobile
         if not mobile:
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
             context['message'] = "Please add a mobile number!"
             return {
@@ -26,9 +27,9 @@ class SaleOrderValidation(models.Model):
             }
         if not mobile[0] == "+":
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
-            context['message'] = "No Country Code! Please add a valid mobile number along with country code!"
+            context['message'] = "No Country Code! Please add a valid mobile number \
+                                  along with country code!"
             return {
                 'name': 'Invalid Mobile Number',
                 'type': 'ir.actions.act_window',
@@ -55,7 +56,6 @@ class SaleOrderValidation(models.Model):
         mobile = self.partner_id.mobile
         if not mobile:
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
             context['message'] = "Please add a mobile number!"
             return {
@@ -71,9 +71,9 @@ class SaleOrderValidation(models.Model):
             }
         if not mobile[0] == "+":
             view = self.env.ref('wpp.wpp_warn_wizard')
-            view_id = view and view.id or False
             context = dict(self._context or {})
-            context['message'] = "No Country Code! Please add a valid mobile number along with country code!"
+            context['message'] = "No Country Code! Please add a valid mobile number \
+                                  along with country code!"
             return {
                 'name': 'Invalid Mobile Number',
                 'type': 'ir.actions.act_window',
@@ -89,17 +89,24 @@ class SaleOrderValidation(models.Model):
             prods = ""
             for rec in self:
                 for id in rec.order_line:
-                    prods = prods + "*" +str(id.product_id.name) + " : " + str(id.product_uom_qty) + "* \n"
+                    prods = prods + "*" + str(id.product_id.name) + " : "
+                    + str(id.product_uom_qty) + "* \n"
 
-            custom_msg = "Hello *{}*, your Sale Order *{}* with amount *{} {}* is ready. \nYour order contains following items: \n{}".format(str(self.partner_id.name),str(self.name),str(self.currency_id.symbol),str(self.amount_total),prods)
+            custom_msg = "Hello *{}*, your Sale Order *{}* with amount *{} {}* is ready. \
+                         \nYour order contains \
+                         following items: \n{}".format(str(self.partner_id.name),
+                                                       str(self.name),
+                                                       str(self.currency_id.symbol),
+                                                       str(self.amount_total),
+                                                       prods)
             link = "https://web.whatsapp.com/send?phone=" + mobile
             message_string = parse.quote(custom_msg)
 
             url_id = link + "&text=" + message_string
             return {
-                'type':'ir.actions.act_url',
+                'type': 'ir.actions.act_url',
                 'url': url_id,
-                'target':'new',
+                'target': 'new',
                 'res_id': self.id,
             }
 
@@ -128,10 +135,12 @@ class SaleOrderValidation(models.Model):
             for each in sale_order_ids:
                 prods = ""
                 for id in each.order_line:
-                    prods = prods + "*" + "Product: "+str(id.product_id.name) + ", Qty: " + str(id.product_uom_qty) + "* \n"
+                    prods = prods + "*" + "Product: " + str(id.product_id.name) \
+                        + ", Qty: " + str(id.product_uom_qty) + "* \n"
                 product_all.append(prods)
 
-            custom_msg = "Hi" + " " + self.partner_id.name + ',' + '\n' + "Your Sale Orders" + '\n' + sale_numbers + \
+            custom_msg = "Hi" + " " + self.partner_id.name + ',' + '\n' \
+                         + "Your Sale Orders" + '\n' + sale_numbers + \
                          ' ' + '\n' + "are ready for review.\n"
             counter = 0
             for every in product_all:
@@ -139,7 +148,8 @@ class SaleOrderValidation(models.Model):
                     counter] + "*" + " contains following items: \n{}".format(every) + '\n'
                 counter += 1
 
-            final_msg = custom_msg + "\nDo not hesitate to contact us if you have any questions."
+            final_msg = custom_msg + "\nDo not hesitate to contact us \
+                                     if you have any questions."
 
             ctx = dict(self.env.context)
             ctx.update({

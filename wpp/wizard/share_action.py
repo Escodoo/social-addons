@@ -1,5 +1,7 @@
 import urllib.parse as urllib
-from odoo import models, fields, api
+
+from odoo import api, fields, models
+
 
 class ShareAction(models.TransientModel):
     _inherit = 'portal.share'
@@ -15,12 +17,13 @@ class ShareAction(models.TransientModel):
     share_type = fields.Selection([
         ('mail', 'Mail'),
         ('whatsapp', 'Whatsapp')], string="Share With", default="mail")
-    partner_id = fields.Char(string='Partner',default=get_name)
+    partner_id = fields.Char(string='Partner', default=get_name)
     mobile_number = fields.Char(string='Mobile Number')
 
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
-        self.mobile_number = self.env[self._context.get('active_model')].browse(self.env.context.get('active_id')).partner_id.mobile
+        self.mobile_number = self.env[self._context.get('active_model')].browse(
+            self.env.context.get('active_id')).partner_id.mobile
 
     def action_send_whatsapp(self):
         if self.note and self.mobile_number:
@@ -28,7 +31,8 @@ class ShareAction(models.TransientModel):
                 common_message = 'Access following Sale Order Document.'
             else:
                 common_message = 'You can access the following Document.'
-            message_string = self.note + '%0a' + common_message + '%0a''%0a' + urllib.quote(self.share_link)
+            message_string = self.note + '%0a' + common_message + '%0a''%0a' \
+                + urllib.quote(self.share_link)
             related_record = self.env[self.res_model].search([('id', '=', int(self.res_id))])
             related_record.message_post(body=message_string)
             link = "https://web.whatsapp.com/send?phone=" + self.mobile_number
