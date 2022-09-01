@@ -1,0 +1,165 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wpp_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-01 07:21+0000\n"
+"PO-Revision-Date: 2022-09-01 04:28-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language: pt_BR\n"
+
+#. module: wpp_sale
+#: model:mail.template,body_html:wpp_sale.wpp_sales_template
+msgid ""
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
+"serif; font-size: 12px;\">\n"
+"         <div>\n"
+"            Hello *${object.partner_id.name or ''}*,\n"
+"         </div>\n"
+"         % if object.state == 'draft' or object.state == 'sent':\n"
+"            Your Quotation *${object.name}* with amount *"
+"${format_amount(object.amount_total, object.currency_id)}* is ready.\n"
+"            <div>\n"
+"                Your quotation date and time is \"${object."
+"date_order}\"\n"
+"            </div>\n"
+"            <div>\n"
+"                Quotation details are as follows: <br>\n"
+"                % for each in object:\n"
+"                    % for id in each.order_line:\n"
+"                        *Product: ${id.product_id.name}* <br>\n"
+"                         *Qty: ${id.product_uom_qty}*<br>\n"
+"                         *Price: ${id.price_subtotal}*<br>\n"
+"                    % endfor\n"
+"                % endfor\n"
+"            </div>\n"
+"         % else:\n"
+"            <div>\n"
+"                Your Sale Order Number *${object.name}* with amount *"
+"${format_amount(object.amount_total, object.currency_id)}* is "
+"Confirmed.\n"
+"            </div>\n"
+"            <div>\n"
+"                Your order date and time is \"${object.date_order}\"\n"
+"            </div>\n"
+"            <div>\n"
+"                Your order details are as follows: <br>\n"
+"                % for each in object:\n"
+"                    % for id in each.order_line:\n"
+"                        *Product: ${id.product_id.name}* <br>\n"
+"                         *Qty: ${id.product_uom_qty}*<br>\n"
+"                         *Price: ${id.price_subtotal}*<br>\n"
+"                    % endfor\n"
+"                % endfor\n"
+"            </div>\n"
+"         % endif\n"
+"        <div>\n"
+"            If you have any questions, please feel free to contact us.\n"
+"        </div>\n"
+"        \n"
+"        "
+msgstr ""
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
+"serif; font-size: 12px;\">\n"
+"         <div>\n"
+"            Olá *${object.partner_id.name or ''}*,\n"
+"         </div>\n"
+"         % if object.state == 'draft' or object.state == 'sent':\n"
+"            Sua Cotação *${object.name}* with amount *"
+"${format_amount(object.amount_total, object.currency_id)}* is ready.\n"
+"            <div>\n"
+"                A data e hora da cotação é \"${object.date_order}\"\n"
+"            </div>\n"
+"            <div>\n"
+"                Os detalhes da cotação são os seguintes: <br>\n"
+"                % for each in object:\n"
+"                    % for id in each.order_line:\n"
+"                        *Produto: ${id.product_id.name}* <br>\n"
+"                         *Qtd: ${id.product_uom_qty}*<br>\n"
+"                         *Preço: ${id.price_subtotal}*<br>\n"
+"                    % endfor\n"
+"                % endfor\n"
+"            </div>\n"
+"         % else:\n"
+"            <div>\n"
+"                Seu Número de Pedido de Venda *${object.name}* com "
+"total *${format_amount(object.amount_total, object.currency_id)}* está "
+"Confirmado.\n"
+"            </div>\n"
+"            <div>\n"
+"                A data e hora do seu pedido são \"${object."
+"date_order}\"\n"
+"            </div>\n"
+"            <div>\n"
+"                Os detalhes do seu pedido são os seguintes: <br>\n"
+"                % for each in object:\n"
+"                    % for id in each.order_line:\n"
+"                        *Produto: ${id.product_id.name}* <br>\n"
+"                         *Qtd: ${id.product_uom_qty}*<br>\n"
+"                         *Preço: ${id.price_subtotal}*<br>\n"
+"                    % endfor\n"
+"                % endfor\n"
+"            </div>\n"
+"         % endif\n"
+"        <div>\n"
+"            Se você tiver alguma dúvida, não hesite em contactar-nos.\n"
+"        </div>\n"
+"        \n"
+"        "
+
+#. module: wpp_sale
+#: model_terms:ir.ui.view,arch_db:wpp_sale.wpp_sale_form
+msgid "Direct Whatsapp Message"
+msgstr "Mensagem Direta Whatsapp"
+
+#. module: wpp_sale
+#: model:ir.model.fields,field_description:wpp_sale.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nome de Exibição"
+
+#. module: wpp_sale
+#: model:ir.model.fields,field_description:wpp_sale.field_sale_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: wpp_sale
+#: model:ir.model.fields,field_description:wpp_sale.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: wpp_sale
+#: code:addons/wpp_sale/models/sales.py:0
+#, python-format
+msgid "Please Select Orders of Unique Customers"
+msgstr "Por Favor Selecione Pedidos de Clientes Únicos"
+
+#. module: wpp_sale
+#: model:ir.model,name:wpp_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de Venda"
+
+#. module: wpp_sale
+#: model:mail.template,subject:wpp_sale.wpp_sales_template
+msgid "Sales template"
+msgstr "Modelo de Vendas"
+
+#. module: wpp_sale
+#: model_terms:ir.ui.view,arch_db:wpp_sale.wpp_sale_form
+msgid "Send Sale Whatsapp Message"
+msgstr "Enviar Mensagem de Venda Whatsapp"
+
+#. module: wpp_sale
+#: code:addons/wpp_sale/models/sales.py:0
+#: model:ir.actions.server,name:wpp_sale.action_wpp_message
+#, python-format
+msgid "Whatsapp Message"
+msgstr "Mensagem do Whatsapp"
