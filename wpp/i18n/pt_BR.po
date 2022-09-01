@@ -1,0 +1,323 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wpp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-01 07:13+0000\n"
+"PO-Revision-Date: 2022-09-01 04:20-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language: pt_BR\n"
+
+#. module: wpp
+#: model:mail.template,body_html:wpp.wpp_template
+msgid ""
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
+"serif; font-size: 12px;\">\n"
+"             <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"             <div>\n"
+"                Hello\n"
+"             </div>\n"
+"        \n"
+"        "
+msgstr ""
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
+"serif; font-size: 12px;\">\n"
+"             <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"             <div>\n"
+"                Olá\n"
+"             </div>\n"
+"        \n"
+"        "
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.inherit_res_config_settings
+msgid "<span class=\"fa fa-lg fa-whatsapp\" title=\"Website WhatsApp Icon.\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-whatsapp\" title=\"Website WhatsApp Icon.\"/>"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.view_portal_share_form_inherit
+msgid "Add a note"
+msgstr "Adicionar uma nota"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_contact_wizard
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_multiple_message_wizard_form
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.FloatingWhatsAppIcon
+msgid "Chat Us on WhatsApp"
+msgstr "Converse conosco no WhatsApp"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_res_config_settings
+msgid "Config Settings"
+msgstr "Definições de Configuração"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_res_partner
+msgid "Contact"
+msgstr "Contato"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__mobile
+msgid "Contact Number"
+msgstr "Número do Contato"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message__create_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__create_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__create_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__create_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__create_uid
+msgid "Created by"
+msgstr "Criado Por"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message__create_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__create_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__create_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__create_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message__display_name
+#: model:ir.model.fields,field_description:wpp.field_portal_share__display_name
+#: model:ir.model.fields,field_description:wpp.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:wpp.field_res_partner__display_name
+#: model:ir.model.fields,field_description:wpp.field_website__display_name
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__display_name
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__display_name
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__display_name
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__display_name
+msgid "Display Name"
+msgstr "Nome de Exibição"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.inherit_res_config_settings
+msgid "Enter Your WhatsApp Number."
+msgstr "Digite o Seu Número WhatsApp."
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message__id
+#: model:ir.model.fields,field_description:wpp.field_portal_share__id
+#: model:ir.model.fields,field_description:wpp.field_res_config_settings__id
+#: model:ir.model.fields,field_description:wpp.field_res_partner__id
+#: model:ir.model.fields,field_description:wpp.field_website__id
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__id
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__id
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__id
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__id
+msgid "ID"
+msgstr "ID"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message____last_update
+#: model:ir.model.fields,field_description:wpp.field_portal_share____last_update
+#: model:ir.model.fields,field_description:wpp.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:wpp.field_res_partner____last_update
+#: model:ir.model.fields,field_description:wpp.field_website____last_update
+#: model:ir.model.fields,field_description:wpp.field_wpp_base____last_update
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard____last_update
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact____last_update
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message__write_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__write_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__write_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__write_uid
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__write_uid
+msgid "Last Updated by"
+msgstr "Ultima Atualização por"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message__write_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__write_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__write_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__write_date
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: wpp
+#: model:ir.model.fields.selection,name:wpp.selection__portal_share__share_type__mail
+msgid "Mail"
+msgstr "Mensagem"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_display_error_message__name
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__message
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__message
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__message
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__message
+#: model:mail.template,subject:wpp.wpp_template
+#: model_terms:ir.ui.view,arch_db:wpp.view_portal_share_form_inherit
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_warn_wizard
+msgid "Message"
+msgstr "Mensagem"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__mobile
+msgid "Mobile"
+msgstr "Celular"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_portal_share__mobile_number
+#: model:ir.model.fields,field_description:wpp.field_wpp_base__phone
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__mobile
+msgid "Mobile Number"
+msgstr "Número do Celular"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_warn_wizard
+msgid "OK"
+msgstr "OK"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_portal_share__partner_id
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_portal_share
+msgid "Portal Sharing"
+msgstr "Compartilhamento do Portal"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_multiple_contact__partner_id
+msgid "Recipient"
+msgstr "Destinatário"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__user_id
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard_contact__partner_id
+msgid "Recipient Name"
+msgstr "Nome do Destinatário"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.view_portal_share_form_inherit
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_contact_wizard
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_multiple_message_wizard_form
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_wizard
+msgid "Send"
+msgstr "Enviar"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_button
+msgid "Send WhatsApp Message"
+msgstr "Enviar Mensagem WhatsApp"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_wizard
+msgid "Send Whatsapp Message"
+msgstr "Enviar Mensagem WhatsApp"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_portal_share__share_type
+msgid "Share With"
+msgstr "Compartilhe Com"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_website__show_wpp_icon
+#: model_terms:ir.ui.view,arch_db:wpp.inherit_res_config_settings
+msgid "Show WhatsApp Icon"
+msgstr "Mostrar Ícone WhatsApp"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_res_config_settings__show_wpp_icon
+msgid "Show Whatsapp Icon"
+msgstr "Mostrar Ícone Whatsapp"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__template_id
+msgid "Use template"
+msgstr "Usar modelo"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_website
+msgid "Website"
+msgstr "Site"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.inherit_res_config_settings
+msgid "WhatsApp Icon"
+msgstr "Ícone WhatsApp"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_res_config_settings__wpp_number
+#: model_terms:ir.ui.view,arch_db:wpp.inherit_res_config_settings
+msgid "WhatsApp Number"
+msgstr "Número do WhatsApp"
+
+#. module: wpp
+#: model_terms:ir.ui.view,arch_db:wpp.inherit_res_config_settings
+msgid "WhatsApp number with country code, No plus (+) sign."
+msgstr "Número do WhatsApp com o código do país, sem sinal de mais (+)."
+
+#. module: wpp
+#: model:ir.model.fields.selection,name:wpp.selection__portal_share__share_type__whatsapp
+msgid "Whatsapp"
+msgstr "Whatsapp"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_wpp_base
+msgid "Whatsapp Base"
+msgstr "Whatsapp Base"
+
+#. module: wpp
+#: code:addons/wpp/models/res_partner.py:0 code:addons/wpp/models/wpp.py:0
+#: model:ir.actions.server,name:wpp.action_whatsapp_message
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_contact_wizard
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_multiple_message_wizard_form
+#, python-format
+msgid "Whatsapp Message"
+msgstr "Mensagem do Whatsapp"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_display_error_message
+msgid "Whatsapp Message Error"
+msgstr "Erro de Mensagem Whatsapp"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_website__wpp_number
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_contact_wizard
+#: model_terms:ir.ui.view,arch_db:wpp.wpp_wizard
+msgid "Whatsapp Number"
+msgstr "Número do Whatsapp"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_wpp_wizard
+msgid "Whatsapp Wizard"
+msgstr "Assistente do WhatsApp"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_wpp_wizard_multiple_contact
+msgid "Whatsapp Wizard Multiple Contact"
+msgstr "Assistente do Whatsapp para Múltiplos Contatos"
+
+#. module: wpp
+#: model:ir.model,name:wpp.model_wpp_wizard_contact
+msgid "Wizard for managing contact whatsapp messages"
+msgstr "Assistente para gerenciar mensagens de contato whatsapp"
+
+#. module: wpp
+#: model:ir.model.fields,field_description:wpp.field_wpp_wizard__model
+msgid "mail.template.model_id"
+msgstr "mail.template.model_id"
