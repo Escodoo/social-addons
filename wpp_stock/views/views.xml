@@ -21,7 +21,7 @@
                     class="oe_highlight"
                     string="Direct Whatsapp Message"
                     icon="fa-whatsapp"
-                    groups="odoo_whatsapp_integration.group_send_sms"
+                    groups="wpp.access_wpp_wizard"
                 />
             </xpath>
         </field>
