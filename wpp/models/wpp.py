@@ -6,6 +6,7 @@ from odoo import _, fields, models
 
 class WppPartner(models.Model):
     _name = "wpp.base"
+    _description = "Whatsapp Base"
 
     message = fields.Text(string="Message", required=True)
     phone = fields.Char(string="Mobile Number", required=True)

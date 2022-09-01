@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record id="access_wpp_base" model="ir.model.access">
+        <field name="name">Whatsapp Base</field>
+        <field name="model_id" ref="model_wpp_base" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_unlink" eval="True" />
+    </record>
+
     <record id="access_wpp_wizard_contact" model="ir.model.access">
         <field name="name">Whastsapp Contact Wizard Permissions</field>
         <field name="model_id" ref="model_wpp_wizard_contact" />
@@ -33,7 +43,7 @@
 
     <record id="access_wpp_wizard_multiple_contact" model="ir.model.access">
         <field name="name">Whastsapp Multiple Contact</field>
-        <field name="model_id" ref="model_display_error_message" />
+        <field name="model_id" ref="model_wpp_wizard_multiple_contact" />
         <field name="group_id" ref="base.group_user" />
         <field name="perm_read" eval="True" />
         <field name="perm_write" eval="True" />

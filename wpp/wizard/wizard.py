@@ -7,6 +7,7 @@ from odoo import api, fields, models
 
 class MessageError(models.TransientModel):
     _name = "display.error.message"
+    _description = "Whatsapp Message Error"
 
     def get_message(self):
         if self.env.context.get("message", False):
@@ -18,6 +19,7 @@ class MessageError(models.TransientModel):
 
 class SendMessage(models.TransientModel):
     _name = "wpp.wizard"
+    _description = "Whatsapp Wizard"
 
     user_id = fields.Many2one(
         "res.partner",

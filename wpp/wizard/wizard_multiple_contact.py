@@ -7,6 +7,7 @@ from odoo import fields, models
 
 class WizardMultipleContact(models.TransientModel):
     _name = "wpp.wizard.multiple.contact"
+    _description = "Whatsapp Wizard Multiple Contact"
 
     partner_id = fields.Many2one("res.partner", string="Recipient")
     mobile = fields.Char(required=True, string="Contact Number")
